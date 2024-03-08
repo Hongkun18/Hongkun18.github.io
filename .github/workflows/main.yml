@@ -20,8 +20,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          R -e "install.packages(c('shiny', 'shinydashboard'), repos='https://cran.rstudio.com/')"
-
+          R -e "install.packages(c('shiny', 'shinydashboard'))"
+          R -e "devtools::install_github('jinworks/CellChat')"
       - name: Deploy Shiny App
         run: |
           R -e "shiny::runApp('app.R', port = 3838, host = '0.0.0.0')"
