@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          R "-e install.packages('shiny')"
+          R "-e install.packages('shiny',repos='http://cran.rstudio.com/')"
           R "-e devtools::install_github('jinworks/CellChat')"
       - name: Deploy Shiny App
         run: |
