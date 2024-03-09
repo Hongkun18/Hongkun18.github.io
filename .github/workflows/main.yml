@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout Repository
@@ -24,4 +24,4 @@ jobs:
           R -e "devtools::install_github('jinworks/CellChat')"
       - name: Deploy Shiny App
         run: |
-          R -e "shiny::runApp('app.R', port = 5825, host = '127.0.0.1')"
+          R -e "shiny::runApp('app.R', port = 5825, host = '0.0.0.0')"
